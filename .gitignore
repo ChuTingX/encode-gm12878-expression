@@ -1,0 +1,32 @@
+# R & RStudio
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# renv: keep lockfile, ignore local libs
+renv/library/
+renv/staging/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# Data (never commit raw/processed)
+data/raw/
+data/processed/
+
+# Reports: keep Rmd, PDFs, figures; ignore html artifacts
+reports/*.html
+reports/*_files/
+
+# Logs & caches
+*.log
+.Rcache/
+.cache/
+
+# Misc
+.httr-oauth
+.Renviron
