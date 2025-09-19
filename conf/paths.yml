@@ -1,0 +1,7 @@
+# conf/paths.yml
+# This file will be OVERWRITTEN by scripts/discover_and_download.R.
+# It enumerates local file paths used by scripts/run_all.R.
+
+gtf_file: null        # e.g. "data/raw/gencode.v19.annotation.gtf"
+cage_bw_file: null    # e.g. "data/raw/wgEncodeRikenCageGm12878NucleusPapPlusSignalRep1.bigWig"
+histone_files: []     # e.g. ["data/raw/wgEncodeBroadHistoneGm12878H3k4me3StdAln_2Reps.norm5.rawsignal.bw", ...]

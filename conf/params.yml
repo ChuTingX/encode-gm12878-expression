@@ -1,0 +1,24 @@
+# conf/params.yml
+chrom: "chr1"
+
+# binning around TSS
+upstream: 2000
+downstream: 2000
+nbins_up: 40
+nbins_down: 40
+window_size: 50
+
+# transcript filters
+min_length: 4100
+
+# feature transform
+fixed_pseudocount: 0.1
+
+# CV & seeds
+kfolds: 10
+seed: 123
+num_workers: 4
+
+# which combo/iteration to store for scatter plot
+chosen_combo: "RF_Clf_RF_Reg"
+chosen_iteration: 1

@@ -1,0 +1,59 @@
+# conf/dataspec.yml
+# Choose what to download and use. The discover_and_download.R script reads this.
+
+genome:
+  build: "hg19"
+
+gtf:
+  mode: "explicit"               # "explicit" or "latest_for_release"
+  explicit_url: "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_19/gencode.v19.annotation.gtf.gz"
+  # If you ever want a different release, set explicit_url accordingly.
+
+cage:
+  base_url: "http://hgdownload.cse.ucsc.edu/goldenpath/hg19/encodeDCC/wgEncodeRikenCage/"
+  mode: "pattern"                # "pattern" or "explicit"
+  explicit_url: null
+  include_patterns:              # ALL must appear in filename
+    - "Gm12878"                  # <- change cell line token here (e.g., "K562", "H1hesc", etc.)
+    - "Nucleus"
+    - "PlusSignal"
+    - ".bigWig"                  # limit to bigWig
+  exclude_patterns: []           # optional negative filters
+
+predictors:
+  base_url: "https://ftp.ebi.ac.uk/pub/databases/ensembl/encode/integration_data_jan2011/byDataType/signal/jan2011/bigwig/"
+  mode: "construct"              # "construct", "pattern", or "explicit_list"
+
+  # --- Mode: construct ---
+  construct:
+    prefix: "wgEncodeBroadHistone"
+    cell_line: "Gm12878"         # change to any supported cell line token in filenames
+    marks:                        # pick any subset you want
+      - "H3k4me3"
+      - "H3k9ac"
+      - "H3k36me3"
+      - "H2az"
+      - "H3k79me2"
+      - "H3k4me1"
+      - "H3k4me2"
+      - "H3k9me3"
+      - "H4k20me1"
+      - "H3k27me3"
+      - "H3k27ac"
+    suffix: "StdAln_2Reps.norm5.rawsignal.bw"   # tweak if you want different processing flavors
+
+  # --- Mode: pattern ---
+  pattern:
+    include_patterns:
+      - "Gm12878"                # cell line token
+      - "StdAln_2Reps.norm5.rawsignal"
+      - ".bw"
+    exclude_patterns: []
+
+  # --- Mode: explicit_list ---
+  explicit_urls: []              # list of full URLs if you want to spell them out
+
+# Optional safety: allowed file extensions to consider when scraping directory listings
+allowed_exts:
+  - ".bw"
+  - ".bigWig"
