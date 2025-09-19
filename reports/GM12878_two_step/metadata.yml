@@ -1,0 +1,35 @@
+example_name: "GM12878 two-step model (static example)"
+genome_build: "hg19"
+gtf:
+  source: "GENCODE"
+  release: "v19"
+  filename: "gencode.v19.annotation.gtf.gz"
+cage:
+  provider: "UCSC RIKEN CAGE"
+  filename: "wgEncodeRikenCageGm12878NucleusPapPlusSignalRep1.bigWig"
+predictors:
+  provider: "ENCODE integration (EBI)"
+  cell_line: "Gm12878"
+  files:
+    - "wgEncodeBroadHistoneGm12878H3k4me3StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k9acStdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k36me3StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H2azStdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k79me2StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k4me1StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k4me2StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k9me3StdAln_3Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H4k20me1StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k27me3StdAln_2Reps.norm5.rawsignal.bw"
+    - "wgEncodeBroadHistoneGm12878H3k27acStdAln_2Reps.norm5.rawsignal.bw"
+analysis_params:
+  upstream: 2000
+  downstream: 2000
+  nbins_up: 40
+  nbins_down: 40
+  window_size: 50
+  min_length: 4100
+  fixed_pseudocount: 0.1
+two_step_combos_example:
+  classification: ["Logistic","RF_Clf","SVM_Clf"]
+  regression: ["Lasso","RF_Reg","MARS","SVM_Reg"]
