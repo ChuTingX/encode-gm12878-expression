@@ -1,7 +1,7 @@
 # 1. Predicting Gene Expression from Chromatin Features
 
 This repository provides a **reproducible R pipeline** to predict **gene expression** from **chromatin features** (histone / DNase bigWigs) using a **two-step model**:
-1) classify genes as **ON/OFF**, and  
+1) **classify** genes as **ON/OFF**, and  
 2) **regress** log2 expression for the genes predicted ON.
 
 It began as a GM12878-only analysis and has been **revised and generalized** so you can select **any supported cell line** by choosing the appropriate **CAGE** track and **predictor** bigWigs.
@@ -22,32 +22,32 @@ It began as a GM12878-only analysis and has been **revised and generalized** so 
 *Data are not shipped; you select them from public directories at run time.*
 
 ## 3. Quickstart — Step 1: Clone the repository
-# Replace <YOU>/<REPO> with your GitHub path.
+### Replace <YOU>/<REPO> with your GitHub path.
 
 git clone https://github.com/<YOU>/<REPO>.git
 cd <REPO>
 
 ## 3. Quickstart — Step 2: Pin the environment (renv)
-# Non-interactive consent + bootstrap: creates renv.lock and activation files.
+### Non-interactive consent + bootstrap: creates renv.lock and activation files.
 
 Rscript -e 'renv::consent(TRUE); source("scripts/00_bootstrap_env.R")'
 
 ## 3. Quickstart — Step 3: Choose datasets (edit conf/dataspec.yml)
-# Pick your GTF (e.g., GENCODE v19), CAGE bigWig (cell line), and predictor bigWigs (marks).
+### Pick your GTF (e.g., GENCODE v19), CAGE bigWig (cell line), and predictor bigWigs (marks).
 
-# Open in Notepad (Windows):
+### Open in Notepad (Windows):
 notepad conf/dataspec.yml
 
-# Or open in VS Code (if installed):
+### Or open in VS Code (if installed):
 code conf/dataspec.yml
 
 ## 3. Quickstart — Step 4: Discover, download, and wire paths
-# Populates data/raw/ and auto-writes conf/paths.yml for the orchestrator.
+### Populates data/raw/ and auto-writes conf/paths.yml for the orchestrator.
 
 Rscript scripts/discover_and_download.R
 
 ## 3. Quickstart — Step 5: Run the pipeline
-# Produces cached outputs in data/processed/ (not versioned).
+### Produces cached outputs in data/processed/ (not versioned).
 
 Rscript scripts/run_all.R --paths conf/paths.yml --params conf/params.yml
 
