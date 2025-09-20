@@ -12,7 +12,7 @@ It began as a GM12878-only analysis and has been **revised and generalized** so 
 
 ## 2. How it works (overview)
 
-![Two-step gene expression modeling pipeline — reproduced from Dong et al., 2012 (CC BY 2.0)](reports/GM12878_two_step/figures/fig-methods-pipeline.png)
+![Two-step gene expression modeling pipeline — reproduced from Dong et al., 2012 (CC BY 2.0)](reports/GM12878_two_step/Figures/fig-methods-pipeline.png)
 
 <sup>Reproduced from: Dong X, Greven MC, Kundaje A, *et al.* (2012) *Genome Biology* 13:R53. 
 Original figure: https://genomebiology.biomedcentral.com/articles/10.1186/gb-2012-13-9-r53/figures/1. 
